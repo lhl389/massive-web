@@ -1,0 +1,101 @@
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin styleTitle() {
+    position: relative;
+    margin-bottom: $mg-0;
+    padding-bottom: $pd-1;
+    color: $color-black-1;
+    font-size: $fs-3;
+    font-weight: $fw-0;
+    line-height: $line-height-0;
+    letter-spacing: $letter-spacing-1;
+    text-align: center;
+    text-transform: uppercase;
+    &::after {
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 60px;
+        height: 2px;
+        margin-left: -31px;
+        content: "";
+        background: $color-grey-5;
+    }
+}
+
+@mixin styleSubTitle() {
+    margin: 0 auto;
+    width: 60%;
+    color: $color-grey-0;
+    line-height: 25px;
+    text-align: center;
+}
+
+@mixin styleButton($color, $py, $px, $bgcolor, $fs, $fw, $lh, $mr) {
+    display: inline-block;
+    color: $color;
+    padding: $py $px;
+    background-color: $bgcolor;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    margin: 0 $mr 0 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+@mixin responsiveMax($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn "`{$screen}` is not exist in breakpoints";
+    }
+}
+
+@mixin responsiveMin($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn "`{$screen}` is not exist in breakpoints";
+    }
+}
+
+@mixin responsiveMin-Max($screenMin, $screenMax) {
+    @if map-has-key($map: $breakpoints, $key: $screenMin) and map-has-key($map: $breakpoints, $key: $screenMax){
+        $valueMin: map-get(
+            $map: $breakpoints,
+            $key: $screenMin,
+        );
+        $valueMax: map-get(
+            $map: $breakpoints,
+            $key: $screenMax,
+        );
+        @media screen and (min-width: $valueMin) and (max-width: $valueMax){
+            @content;
+        }
+    } @else {
+        @warn "`{$screen}` is not exist in breakpoints";
+    }
+}
+
+// and map-has-key($map: $breakpoints, $key: $screenMax)

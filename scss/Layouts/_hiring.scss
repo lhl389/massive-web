@@ -1,0 +1,49 @@
+.hiring {
+    .hiring__container {
+        background-color: $color-white-4;
+        margin: 0 30px;
+        padding: 40px;
+        .hiring__info {
+            h4 {
+                letter-spacing: $letter-spacing-2;
+                text-transform: uppercase;
+                font-size: $fs-0 + 5;
+                .theme-color {
+                    display: inline;
+                    color: $color-yellow-0;
+                }
+            }
+            span{
+                display: block;
+                margin-top: 10px;
+                color: $color-grey-0;
+            }
+        }
+        .hiring__button{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            text-align: left;
+            a{
+                width: fit-content;
+                height: auto;
+                text-align: center;
+            }
+        }
+    }
+    @include responsiveMax ("medium"){
+        .container{
+            max-width: 100%;
+        }
+        .hiring__container{
+            .hiring__button{
+                margin-top: $mg-0;
+                justify-content: start;
+                a{
+                    font-size: $fs-0 - 1;
+                    margin-bottom: $mg-5;
+                }
+            }
+        }
+    }
+}

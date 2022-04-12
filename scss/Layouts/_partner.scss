@@ -1,0 +1,15 @@
+.partner{
+    border-top: 1px solid #eee;
+    .partner__carousel{
+        padding: 0 30px;
+        .partner__item{
+            width: 185px;
+            padding: $pd-2;
+            img{
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

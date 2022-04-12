@@ -1,0 +1,33 @@
+.number {
+    background-color: $color-black-6;
+    .number__container {
+        .number__item {
+            text-align: center;
+            color: $color-white-0;
+            .number__top {
+                margin-bottom: $mg-3;
+                font-size: $fs-5 + 1;
+                i {
+                    padding-right: $pd-1;
+                }
+                p {
+                    display: inline-block;
+                    letter-spacing: $letter-spacing-1;
+                }
+            }
+            .number__bottom {
+                span {
+                    text-transform: uppercase;
+                    letter-spacing: $letter-spacing-2;
+                }
+            }
+        }
+    }
+    @include responsiveMax ("large"){
+        .number__container{
+            .number__item{
+                padding: $pd-0 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.showcase {
+    padding-bottom: 0;
+    .showcase__container {
+        .showcase__title {
+            h3 {
+                @include styleTitle();
+            }
+            p {
+                @include styleSubTitle();
+            }
+            margin-bottom: $mg-0 + $mg-0 + $mg-1;
+        }
+        .showcase__content {
+            .showcase__nav {
+                ul {
+                    li {
+                        a.nav-link {
+                            @include styleText($color-grey-3, $fs-0 + 1, $fw-2);
+                            letter-spacing: $letter-spacing-3;
+                            cursor: pointer;
+                            padding: 0;
+                            margin: 0 $mg-4;
+                            transition: all 0.3s;
+                            &:hover {
+                                color: $color-black-4;
+                            }
+                            &.active {
+                                color: $color-black-4;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .showcase__cat {
+                margin-top: $mg-0 + $mg-1;
+                width: 100%;
+                .thumb {
+                    &:hover {
+                        .cat-hover {
+                            opacity: 1;
+                            .cat-icon {
+                                top: 25%;
+                            }
+                            .cat-script {
+                                bottom: 20%;
+                            }
+                        }
+                    }
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                    .cat-hover {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        border: 20px solid $color-white-1;
+                        background-color: $color-white-2;
+                        transition: all 0.3s;
+                        .cat-icon {
+                            position: absolute;
+                            width: 100%;
+                            top: 5%;
+                            text-align: center;
+                            transition: all 0.3s;
+                            a {
+                                text-decoration: none;
+                                color: $color-black-0;
+                                font-size: 35px;
+                            }
+                        }
+                        .cat-script {
+                            position: absolute;
+                            bottom: 5%;
+                            width: 100%;
+                            text-transform: uppercase;
+                            text-align: center;
+                            transition: all 0.3s;
+                            h4 {
+                                letter-spacing: $letter-spacing-4;
+                                font-size: 14px;
+                                margin-bottom: $mg-5;
+                                line-height: $line-height-3 + $line-height-4;
+                                a {
+                                    text-decoration: none;
+                                    color: $color-black-1;
+                                    transition: all 0.3s;
+                                    &:hover {
+                                        color: $color-yellow-0;
+                                    }
+                                }
+                            }
+
+                            p {
+                                letter-spacing: $letter-spacing-3;
+                                font-size: $fs-0 - 1;
+                                line-height: $line-height-2;
+                                a {
+                                    text-decoration: none;
+                                    color: #757575;
+                                    transition: all 0.3s;
+                                    &:hover {
+                                        color: $color-yellow-0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

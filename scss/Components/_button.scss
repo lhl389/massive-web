@@ -1,0 +1,15 @@
+.black--button {
+    @include styleButton($color-white-0, $pd-1 + 5, $pd-0, $color-black-4, $fs-0 + 1, $fw-0, $line-height-0, 0);
+    &:hover{
+        background-color: $color-yellow-0;
+        color: $color-white-0;
+    }
+}
+
+.yellow--button {
+    @include styleButton($color-white-0, $pd-1 + 5, $pd-0, $color-yellow-0, $fs-0 + 1, $fw-0, $line-height-0, 0);
+    &:hover{
+        background-color: $color-white-0;
+        color: $color-black-4;
+    }
+}

@@ -1,0 +1,116 @@
+.team {
+    padding-bottom: 0;
+    .team__title {
+        h3 {
+            @include styleTitle();
+        }
+        p {
+            @include styleSubTitle();
+        }
+        margin-bottom: $mg-0 + $mg-0 + $mg-1;
+    }
+    .team__member {
+        .member__info {
+            padding: 0 $pd-0;
+            position: relative;
+            .thumb {
+                position: relative;
+                overflow: hidden;
+                .member__img {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                    .member__text {
+                        position: absolute;
+                        right: 0;
+                        bottom: 30px;
+                        width: 70%;
+                        padding: $pd-1 $pd-2;
+                        text-align: right;
+                        background: $color-black-5;
+                        h4 {
+                            color: $color-white-0;
+                            line-height: $line-height-0;
+                            font-size: $fs-0 + 1;
+                            text-transform: uppercase;
+                            letter-spacing: $letter-spacing-1;
+                            margin-bottom: 0;
+                        }
+                        span {
+                            color: $color-white-3;
+                            font-size: $fs-0 - 1;
+                            letter-spacing: $letter-spacing-1;
+                            text-transform: uppercase;
+                            line-height: $line-height-0;
+                        }
+                    }
+                }
+                .member__hover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    transition: all 0.3s;
+                    border: 20px solid $color-white-1;
+                    background-color: $color-white-2;
+                    opacity: 0;
+                    .member__script {
+                        position: absolute;
+                        top: 0;
+                        transform: translateY(-55%);
+                        transition: all 0.3s 0.2s;
+                        width: 100%;
+                        padding: 0 $pd-2;
+                        color: $color-black-4;
+                        text-align: center;
+                        opacity: 0;
+                        h4 {
+                            margin-bottom: $mg-0 + $mg-5;
+                            letter-spacing: $letter-spacing-4;
+                            text-transform: uppercase;
+                            font-size: $fs-0 + 1;
+                        }
+                        p {
+                            margin-bottom: 0;
+                            color: $color-grey-0;
+                            font-size: $fs-0 + 1;
+                            line-height: $line-height-2;
+                        }
+                    }
+                    .member__social {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        transition: all 0.3s 0.2s;
+                        transform: translateY(45%);
+                        text-align: center;
+                        opacity: 0;
+                        font-size: $fs-5;
+                        a {
+                            margin: 0 10px;
+                            font-size: $fs-0 + 3;
+                            text-decoration: none;
+                            color: $color-black-4;
+                        }
+                    }
+                }
+                &:hover {
+                    .member__hover {
+                        opacity: 1;
+                        .member__script {
+                            top: 35%;
+                            opacity: 1;
+                        }
+                        .member__social {
+                            bottom: 10%;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

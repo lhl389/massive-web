@@ -1,0 +1,129 @@
+.skill {
+    background-image: url(../img/skill-img.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    .skill__darkOverlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $color-black-3;
+    }
+    .skill__content {
+        position: relative;
+        z-index: 100;
+        .skill__left {
+            height: 400px;
+            padding-left: $pd-0;
+            padding-right: $pd-0;
+            text-align: center;
+            h3 {
+                @include styleText($color-white-0, $fs-3, $fw-0);
+                line-height: $line-height-0;
+                letter-spacing: $letter-spacing-0 + 1;
+                text-transform: uppercase;
+            }
+        }
+        .skill__right {
+            position: relative;
+            padding: 0 $pd-0;
+            .right__container {
+                padding: 0 $pd-0;
+            }
+            .right__title {
+                h4 {
+                    @include styleText($color-white-0, $fs-0 + 5, $fw-0);
+                    letter-spacing: $letter-spacing-1;
+                    margin-bottom: $mg-1;
+                    text-transform: uppercase;
+                }
+            }
+            .right__text {
+                color: $color-white-0;
+                margin-bottom: $mg-1;
+                line-height: $line-height-2;
+            }
+            .right__bars {
+                .bars__item {
+                    border-radius: 0;
+                    box-shadow: none;
+                    overflow: visible;
+                    height: $height-0;
+                    margin-top: $mg-3;
+                    margin-bottom: $mg-0 + $mg-1;
+                    letter-spacing: 1px;
+                    background: $color-grey-6;
+                    .progress-bar {
+                        position: relative;
+                        overflow: visible;
+                        opacity: 0;
+                        width: 0;
+                        text-align: left;
+                        padding-left: $pd-1;
+                        background: $color-white-0;
+                        font-size: $fs-0 - 3;
+                        color: $color-black-4;
+                        line-height: $line-height-3;
+                        transition: all 1s;
+                        span {
+                            position: absolute;
+                            display: inline-block;
+                            top: -28px;
+                            right: -5px;
+                            min-width: 25px;
+                            height: 20px;
+                            padding: 0 8px;
+                            text-align: center;
+                            letter-spacing: 0;
+                            border-radius: 30px;
+                            line-height: 20px;
+                            font-size: 10px;
+                            color: $color-black-4;
+                            background-color: $color-grey-2;
+                            cursor: pointer;
+                            &::before {
+                                position: absolute;
+                                bottom: -2px;
+                                left: 15px;
+                                display: block;
+                                width: 5px;
+                                height: 5px;
+                                content: "";
+                                transform: rotate(45deg);
+                                border-style: none;
+                                border: 1px solid $color-grey-2;
+                                border-image: none;
+                                background-color: $color-grey-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsiveMax ("screen-2"){
+        .skill__darkOverlay{
+            display: none;
+        }
+    }
+
+    @include responsiveMax ("medium"){
+        .container{
+            max-width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .skill__content{
+            .skill__left{
+                h3{
+                    font-size: $fs-0 + 5;
+                }
+            }
+        }
+    }
+}

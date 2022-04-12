@@ -1,0 +1,97 @@
+.work {
+    background-image: url(../img/work.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    .work__container {
+        padding: 0 30px;
+        .workNav {
+            .nav-item {
+                &:not(:first-child) {
+                    margin-left: $mg-0;
+                }
+                .nav-link {
+                    position: relative;
+                    background-color: $color-white-5;
+                    transition: all 0.3s ease;
+                    border-radius: 0;
+                    padding: $pd-3 $pd-4;
+                    color: $color-black-4;
+                    i {
+                        font-size: $fs-5 + 1;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 0;
+                        height: 0;
+                        transition: all 0.3s ease;
+                        opacity: 0;
+                        border-width: 10px 10px 0 10px;
+                        border-style: solid;
+                        border-color: #fff transparent transparent transparent;
+                    }
+                    &:hover,
+                    &.active {
+                        background-color: $color-white-0;
+                    }
+                    &:hover::after,
+                    &.active::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .work__content {
+            padding: $pd-0 0;
+            .work__tab {
+                line-height: $line-height-2;
+                .heading__title {
+                    margin-bottom: $mg-0 + $mg-1;
+                    text-transform: uppercase;
+                    .mini__title {
+                        letter-spacing: $letter-spacing-1;
+                        @include styleText($color-grey-0, $fs-0 + 1, $fw-0);
+                    }
+                    .main__title {
+                        line-height: $line-height-0;
+                        letter-spacing: $letter-spacing-1;
+                        @include styleText($color-black-1, $fs-4, $fw-0);
+                    }
+                }
+            }
+        }
+    }
+    @include responsiveMax("medium") {
+        .container {
+            max-width: 100%;
+        }
+        .work__container {
+            .workNav {
+                .nav-item {
+                    display: block;
+                    width: 100%;
+                    &:not(:first-child) {
+                        margin-left: 0;
+                    }
+                    margin-bottom: $mg-3;
+                    .nav-link {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+            }
+            .work__content {
+                .work__tab {
+                    .heading__title {
+                        .main__title {
+                            font-size: $fs-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.feedback {
+    .feedback__container {
+        width: 100%;
+        text-align: center;
+        .feedback__carousel {
+            display: inline-block;
+            text-align: center;
+            width: 720px;
+            .feedback__item {
+                text-align: center;
+                margin: $mg-0;
+                .feedback__avatar {
+                    display: inline-block;
+                    width: 100px;
+                    height: auto;
+                    margin-bottom: $mg-0;
+                    img {
+                        display: block;
+                        height: auto;
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .feedback__content{
+                    font-style: italic;
+                    line-height: $line-height-2;
+                    margin-bottom: $mg-1;
+                    @include styleText($color-grey-0, $fs-0 + 3, $fw-2);
+                }
+                .feedback__author{
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    p{
+                        @include styleText($color-black-4, $fs-0 + 1, $fw-2);
+                    }
+                    span{
+                        @include styleText($color-grey-9, $fs-0 - 1, $fw-2);
+                    }
+                }
+            }
+        }
+    }
+}

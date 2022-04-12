@@ -1,0 +1,144 @@
+header {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    .myNav {
+        padding: 0;
+        transition: all 0.3s;
+        z-index: 999;
+        .myNav__container {
+            display: flex;
+            padding: 0 $pd-0;
+            flex-wrap: wrap;
+        }
+        .myNav__left {
+            box-sizing: border-box;
+            img {
+                position: relative;
+                top: 2px;
+                display: inline-block;
+                max-height: 100px;
+                padding: 2px 0;
+                height: 96px;
+                width: auto;
+                line-height: 60px;
+                transition: all 0.3s;
+            }
+        }
+        .myNav__right,
+        #myNav__content2 {
+            .navbar-toggler {
+                i {
+                    color: $color-white-0;
+                }
+            }
+            .navbar-nav {
+                max-height: 400px;
+                flex-wrap: wrap;
+                .nav-item {
+                    margin-left: 2px;
+                    .nav-link {
+                        display: block;
+                        @include styleText($color-white-0, $fs-0, $fw-0);
+                        padding: 0 $pd-1 + 2;
+                        letter-spacing: 0.5px;
+                        transition: all 0.1s;
+                        cursor: pointer;
+                        line-height: $line-height-1;
+                        &:hover {
+                            color: $color-yellow-0;
+                        }
+                        span.indicator {
+                            margin-left: $mg-2;
+                        }
+                        &.active {
+                            color: $color-yellow-0;
+                        }
+                        &.nav-divider {
+                            cursor: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include responsiveMin-Max("medium", "screen-1") {
+        .myNav {
+            .myNav__container {
+                display: block;
+                .myNav__right {
+                    #myNav__content {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    @include responsiveMin("medium") {
+        .myNav {
+            .myNav__container {
+                #myNav__content2 {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    @include responsiveMax("medium") {
+        .myNav {
+            height: 60px;
+            width: 100%;
+            display: block;
+            position: fixed;
+            top: 0;
+            .myNav__container {
+                height: 60px;
+                background-color: $color-black-0;
+                .myNav__left {
+                    #headerLogo {
+                        height: 60px !important;
+                    }
+                }
+                #myNav__content2 {
+                    z-index: 999;
+                    background-color: $color-white-0;
+                    max-height: 400px;
+                    .navbar-nav {
+                        .nav-item {
+                            position: relative;
+                            display: block;
+                            width: 100%;
+                            margin-left: $mg-2 - 1;
+                            .nav-link {
+                                color: $color-black-1;
+                                border-top: 1px solid $color-grey-15;
+                                border-bottom: 1px solid $color-grey-15;
+                                padding: $pd-1 + 2 $pd-2;
+                                line-height: $line-height-3;
+                                span {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    width: 60px;
+                                    height: 45px;
+                                    text-align: center;
+                                    border-left: solid 1px #f5f5f5;
+                                    font-size: $fs-2 + 2;
+                                    line-height: $line-height-5 - 2;
+                                }
+                                &:hover {
+                                    color: $color-yellow-0;
+                                }
+                                &.active {
+                                    color: $color-yellow-0;
+                                }
+                                &.nav-divider {
+                                    cursor: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

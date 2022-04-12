@@ -1,0 +1,36 @@
+.cover {
+    background-image: url(../img/index-banner-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    height: 100vh;
+    .cover__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        h1 {
+            text-transform: uppercase;
+            @include styleText($color-white-0, $fs-1, $fw-1);
+            letter-spacing: $letter-spacing-0;
+            line-height: normal;
+        }
+        h3 {
+            text-transform: uppercase;
+            @include styleText($color-white-0, $fs-2, $fw-0);
+            letter-spacing: $letter-spacing-0 + 1;
+        }
+    }
+    @include responsiveMax("medium") {
+        .cover__content{
+            h1 {
+                font-size: $fs-4;
+            }
+            h3{
+                font-size: $fs-2 - 2;
+            }
+        }
+    }
+}

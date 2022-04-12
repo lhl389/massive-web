@@ -1,0 +1,43 @@
+.banner {
+    padding: 150px 0;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    .banner__container {
+        width: 100%;
+        .banner__titile {
+            h5 {
+                text-transform: uppercase;
+                @include styleText($color-yellow-0, $fs-0 + 3, $fw-2);
+                text-align: center;
+                letter-spacing: $letter-spacing-3;
+            }
+            h3 {
+                text-transform: uppercase;
+                @include styleText($color-white-0, $fs-5 + 1, $fw-0);
+                text-align: center;
+                letter-spacing: $letter-spacing-1;
+            }
+        }
+        .banner__button {
+            margin-top: 50px;
+            text-align: center;
+        }
+    }
+    @include responsiveMax("medium") {
+        .banner__container {
+            .banner__titile {
+                h3 {
+                    font-size: $fs-3 + 2;
+                }
+            }
+            .banner__button {
+                a {
+                    font-size: $fs-0 - 1;
+                }
+            }
+        }
+    }
+}
